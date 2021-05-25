@@ -1,12 +1,9 @@
-import { useSelector } from "react-redux";
-
-function Digimon(){
-    const {digimons} = useSelector(store => store)
+function Digimon({digimon: {name, img, level}}){
     return (
       <div>
-        <ul>
-          {digimons.map((digimon, index) => <li key={index}>{digimon}</li>)}
-        </ul>
+        <p>{name}</p>
+        <img src={img} alt={name} />
+        <p>{level}</p>
       </div>
     )
   }

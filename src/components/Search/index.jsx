@@ -10,7 +10,7 @@ function Search() {
 
   function handleSearch() {
     setError(false);
-    dispatch(addDigimonThunk(input))
+    dispatch(addDigimonThunk(input));
     setInput("");
   };
 
