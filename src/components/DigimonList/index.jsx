@@ -3,10 +3,11 @@ import Digimon from "../Digimon";
 
 function DigimonList(){
     const {digimons} = useSelector(store => store);
+
     return (
-        <div>
-          {digimons.map((digimon, index) => <Digimon key={index} digimon={digimon}/>)}
-        </div>
+        <ul>
+          {digimons.map((digimon, index) => <li key={index}><Digimon digimon={digimon}/></li> )}
+        </ul>
     )
   }
   

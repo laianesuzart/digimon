@@ -1,6 +1,8 @@
+import './style.css';
+
 function Digimon({digimon: {name, img, level}}){
     return (
-      <div>
+      <div className="card">
         <p>{name}</p>
         <img src={img} alt={name} />
         <p>{level}</p>
