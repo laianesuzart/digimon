@@ -2,17 +2,14 @@ import { useState } from "react";
 import {useDispatch} from 'react-redux';
 import addDigimonThunk from '../../store/modules/digimons/thunks';
 
-
 function Search() {
   const [input, setInput] = useState("");
-  const [error, setError] = useState(false);
 
   const dispatch = useDispatch();
 
   function handleSearch() {
-    // setError(false);
     !!input &&
-    dispatch(addDigimonThunk(input, setError));
+    dispatch(addDigimonThunk(input));
     setInput("");
   };
 
