@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
-import addDigimonThunk from "../../store/modules/digimons/thunks";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import addDigimonThunk from '../../store/modules/digimons/thunks';
 
 function Search() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [error, setError] = useState(false);
 
   const dispatch = useDispatch();
@@ -13,9 +13,9 @@ function Search() {
     setError(false);
     if (!!input) {
       dispatch(addDigimonThunk(input, setError));
-      setInput("");
+      setInput('');
     } else {
-      toast.error("Digite um nome!");
+      toast.error('Digite um nome!');
     }
   }
 
@@ -30,11 +30,7 @@ function Search() {
         ></input>
         <button onClick={handleSearch}>Pesquisar</button>
       </div>
-      {error && (
-        <div style={{ marginTop: 10, color: "darkred" }}>
-          Digimon não existe!
-        </div>
-      )}
+      {error && <div style={{ marginTop: 10, color: 'darkred' }}>Digimon não existe!</div>}
     </div>
   );
 }

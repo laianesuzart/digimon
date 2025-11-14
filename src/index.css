@@ -1,4 +1,8 @@
-html, body, div, ul, p {
+html,
+body,
+div,
+ul,
+p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

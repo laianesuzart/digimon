@@ -1,4 +1,4 @@
-import { ADD_DIGIMON } from "./actionsTypes";
+import { ADD_DIGIMON } from './actionsTypes';
 
 function digimonsReducer(state = [], action) {
   switch (action.type) {

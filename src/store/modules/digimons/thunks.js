@@ -1,5 +1,5 @@
-import axios from "axios";
-import { addDigimon } from "./actions";
+import axios from 'axios';
+import { addDigimon } from './actions';
 
 const addDigimonThunk = (digimon, setError) => (dispatch) => {
   axios

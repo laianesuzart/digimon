@@ -1,17 +1,17 @@
 .card {
-    width: 150px;
-    background-color: darkcyan;
-    padding: 10px 0;
-    border-radius: 15px;
-    box-shadow: 2px 2px 2px lightblue;
+  width: 150px;
+  background-color: darkcyan;
+  padding: 10px 0;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px lightblue;
 }
 
 .card img {
-    border-radius: 50%;
-    width: 60px;
-    margin: 8px 0;
+  border-radius: 50%;
+  width: 60px;
+  margin: 8px 0;
 }
 
 .card p:last-child {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }

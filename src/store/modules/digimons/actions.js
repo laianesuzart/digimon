@@ -1,8 +1,8 @@
-import {ADD_DIGIMON} from './actionsTypes';
+import { ADD_DIGIMON } from './actionsTypes';
 
 export function addDigimon(digimon) {
-    return {
-        type: ADD_DIGIMON,
-        digimon
-    }
+  return {
+    type: ADD_DIGIMON,
+    digimon,
+  };
 }
