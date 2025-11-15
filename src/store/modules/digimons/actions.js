@@ -1,8 +1,16 @@
-import { ADD_DIGIMON } from './actionsTypes';
+import { FILTER_DIGIMON, LIST_DIGIMON } from './actionsTypes';
 
-export function addDigimon(digimon) {
+export function listDigimon(digimons, status) {
   return {
-    type: ADD_DIGIMON,
-    digimon,
+    type: LIST_DIGIMON,
+    digimons,
+    status,
+  };
+}
+
+export function filterDigimon(name) {
+  return {
+    type: FILTER_DIGIMON,
+    name,
   };
 }

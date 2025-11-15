@@ -1,0 +1,91 @@
+html,
+body,
+div,
+ul,
+p,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  background-color: oklch(0.51 0.12 244.43);
+  min-height: 100vh;
+  text-align: center;
+  padding: 0 16px 32px;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.title {
+  font-family: 'Rampart One', sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  color: oklch(0.82 0.16 76.59);
+  margin-block-end: 4px;
+}
+
+.search__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 16px 8px;
+}
+
+.search__field {
+  border: none;
+  height: 32px;
+  padding: 4px;
+  border-radius: 2px 0 0 2px;
+}
+
+.search__button {
+  color: #000;
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 0 2px 2px 0;
+  background-color: oklch(0.82 0.16 76.59);
+  padding: 6px;
+  height: 32px;
+  transition: background 300ms ease-in-out;
+}
+
+.search__button:hover {
+  background-color: oklch(0.7 0.2 43.49);
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 233px), 1fr));
+  gap: 16px;
+  place-items: center;
+  margin: 20px auto 0;
+  max-width: 980px;
+}
+
+.error {
+  padding: 48px 8px 16px;
+}
+
+.no-break {
+  white-space: nowrap;
+}

@@ -1,10 +1,29 @@
-import { ADD_DIGIMON } from './actionsTypes';
+import { FILTER_DIGIMON, LIST_DIGIMON } from './actionsTypes';
 
-function digimonsReducer(state = [], action) {
+const INITIAL_STATE = {
+  allDigimons: [],
+  filteredDigimons: [],
+  error: false,
+};
+
+function digimonsReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ADD_DIGIMON:
-      const { digimon } = action;
-      return [...state, digimon];
+    case LIST_DIGIMON:
+      return {
+        ...state,
+        allDigimons: action.digimons,
+        filteredDigimons: action.digimons,
+        error: action.status === 'error',
+      };
+
+    case FILTER_DIGIMON: {
+      if (!action.name) return { ...state, filteredDigimons: state.allDigimons };
+      const name = action.name.toLowerCase();
+      const digimons = state.allDigimons.filter((digimon) =>
+        digimon.name.toLowerCase().includes(name)
+      );
+      return { ...state, filteredDigimons: digimons };
+    }
 
     default:
       return state;

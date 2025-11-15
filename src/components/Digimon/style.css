@@ -1,17 +1,67 @@
 .card {
-  width: 150px;
-  background-color: darkcyan;
-  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  gap: 4px;
   border-radius: 15px;
-  box-shadow: 2px 2px 2px lightblue;
+  box-shadow: 2px 2px 4px 0px oklch(0 0 0);
+  background-color: oklch(0.41 0.12 252.22);
+  width: 233px;
+  position: relative;
 }
 
-.card img {
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.card--mega::after,
+.card--mega::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: conic-gradient(from var(--angle), transparent 60%, oklch(0.7 0.2 43.49));
+  margin: -6px;
+  border-radius: 15px;
+  animation: 3s spin linear infinite;
+}
+
+.card--mega::before {
+  filter: blur(24px);
+  opacity: 0.6;
+}
+
+.card__figure {
+  margin: 0;
+}
+
+.card__title {
+  font-weight: 600;
+  color: oklch(0.82 0.16 76.59);
+  text-shadow: 2px 1px 1px oklch(0 0 0);
+  padding-block-end: 8px;
+}
+
+.card__image {
   border-radius: 50%;
-  width: 60px;
-  margin: 8px 0;
+  box-shadow: 2px 2px 4px 0px oklch(0% 0 0 / 0.5);
 }
 
-.card p:last-child {
+.card__caption {
   font-size: 0.8rem;
+  background-color: oklch(0.5 0.01 148.97);
+  padding: 2px 8px;
+  border: 1px outset oklch(0 0 0);
 }

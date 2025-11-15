@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { addDigimon } from './actions';
+import { listDigimon } from './actions';
 
-const addDigimonThunk = (digimon, setError) => (dispatch) => {
+export const listDigimonThunk = () => (dispatch) => {
   axios
-    .get(`https://digimon-api.vercel.app/api/digimon/name/${digimon}`)
+    .get('https://digimon-api.vercel.app/api/digimon')
     .then((res) => {
-      dispatch(addDigimon(...res.data));
+      dispatch(listDigimon(res.data, 'success'));
     })
-    .catch((err) => setError(true));
+    .catch(() => {
+      dispatch(listDigimon([], 'error'));
+    });
 };
-
-export default addDigimonThunk;
